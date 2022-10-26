@@ -364,7 +364,7 @@ export class AptoswapTradingPool extends TradingPool {
     return this.pool != null;
   }
 
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     const resource = await app.client.getAccountResource(this.packageAddr, this.tag.getAptosMoveTypeTag());
     this.pool = AptoswapPoolInfo.mapResourceToPoolInfo(resource)!;
   }

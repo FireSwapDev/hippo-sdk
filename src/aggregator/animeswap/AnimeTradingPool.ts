@@ -29,7 +29,7 @@ export class AnimeTradingPool extends TradingPool {
     return !!this.pool;
   }
 
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     // eslint-disable-next-line max-len
     this.pool = await app.SwapDeployer.AnimeSwapPoolV1.LiquidityPool.load(app.parserRepo, app.client, this.ownerAddr, [
       this.xTag,

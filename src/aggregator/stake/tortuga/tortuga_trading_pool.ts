@@ -15,7 +15,7 @@ export class TortugaTradingPool extends StakeTradingPool {
     let amount = this.xAmountInfo?.data.commission_exempt_amount;
     return parseInt(amount) / Math.pow(10, this.xCoinInfo.decimals);
   }
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     let res = await Promise.all([
       app.client.getAccountResource(this.ownerAddress, this.ownerAddress + '::stake_router::StakingStatus'),
       StdCoinInfo.load(app.parserRepo, app.client, this.ownerAddress, [coinInfoToTag(this.yCoinInfo)])

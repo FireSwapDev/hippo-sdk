@@ -38,7 +38,7 @@ export class EconiaTradingPoolV1 extends TradingPool {
   isStateLoaded() {
     return !!this.orderBook;
   }
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     const orderBooks = await OrderBooks.load(this.repo, app.client, this.owner, []);
     const rawOrderBook = await app.client.getTableItem(orderBooks.map.base_table.handle.toString(), {
       key_type: getTypeTagFullname(AtomicTypeTag.U64),

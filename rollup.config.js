@@ -15,7 +15,7 @@ var rollup_config = [
         sourcemap: true
       }
     ],
-    external: ['aptos', '@manahippo/move-to-ts', 'big-integer'],
+    external: ['aptos', '@manahippo/move-to-ts', 'big-integer', 'wretch', 'wretch/addons/queryString'],
     plugins: [typescript()]
   }
 ];

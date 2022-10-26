@@ -29,7 +29,7 @@ export class BasiqTradingPool extends TradingPool {
   isStateLoaded(): boolean {
     return true;
   }
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     this.basiqPool = await app.client.getAccountResource(this.ownerAddress, this.poolResourceTag.getAptosMoveTypeTag());
   }
   getPrice(): PriceType {

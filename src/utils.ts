@@ -17,6 +17,9 @@ import { Nothing } from './generated/coin_list/coin_list';
 import * as Std from './generated/stdlib';
 import * as $ from '@manahippo/move-to-ts';
 import { CoinInfo } from './generated/stdlib/coin';
+import wretch from 'wretch';
+import QueryStringAddon from 'wretch/addons/queryString';
+import { HIPPO_API_ORIGIN } from './config';
 
 export function typeInfoToTypeTag(typeInfo: AptosStdlib.Type_info.TypeInfo) {
   const fullname = `${typeInfo.account_address.hex()}::${u8str(typeInfo.module_name)}::${u8str(typeInfo.struct_name)}`;
@@ -127,3 +130,5 @@ export async function queryFetchFullList(app: App, owner: HexString, expireTimes
     expireTimestamp: Math.floor(Date.now() / 1000) + expireTimestampSecFromNow
   });
 }
+
+export const whip = wretch(HIPPO_API_ORIGIN).addon(QueryStringAddon);

@@ -17,7 +17,7 @@ export class DittoTradingPool extends StakeTradingPool {
     let amount = this.xAmountInfo?.data.total_aptos;
     return parseInt(amount) / Math.pow(10, this.xCoinInfo.decimals);
   }
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     let res = await Promise.all([
       app.client.getAccountResource(this.ownerAddress, this.ownerAddress + '::ditto_staking::DittoPool'),
       StdCoinInfo.load(app.parserRepo, app.client, this.ownerAddress, [coinInfoToTag(this.yCoinInfo)])

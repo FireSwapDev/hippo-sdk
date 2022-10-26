@@ -30,7 +30,7 @@ export class PontemTradingPool extends TradingPool {
   isStateLoaded(): boolean {
     return this.pontemPool != undefined;
   }
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     this.pontemPool = await app.liquidswap.liquidity_pool.loadLiquidityPool(this.ownerAddress, [
       this.xTag,
       this.yTag,

@@ -111,3 +111,5 @@ export const CONFIGS = {
   testnet: TESTNET_CONFIG,
   mainnet: MAINNET_CONFIG
 };
+
+export const HIPPO_API_ORIGIN = 'http://localhost:3030';

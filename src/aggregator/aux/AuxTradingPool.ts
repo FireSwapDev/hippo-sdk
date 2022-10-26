@@ -75,7 +75,7 @@ export class AuxTradingPool extends TradingPool {
     return u64(0);
   }
 
-  async reloadState(app: App): Promise<void> {
+  async reloadStateInternal(app: App): Promise<void> {
     this.pool = await app.aux.amm.loadPool(this.ownerAddress, [this.xTag, this.yTag]);
   }
 }
