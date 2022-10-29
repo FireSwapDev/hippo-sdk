@@ -205,6 +205,7 @@ export class TradeAggregator {
   ): Promise<RouteAndQuote[]> {
     const routes = this.getAllRoutes(x, y, maxSteps, allowRoundTrip);
     const poolSet = new Set(routes.flatMap((r) => r.steps).map((s) => s.pool));
+    console.log(`Reloading ${poolSet.size} pools`);
     const promises: Promise<void>[] = [];
     for (const pool of poolSet) {
       if (!pool.isStateLoaded || reloadState) {
