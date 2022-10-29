@@ -18,6 +18,7 @@ export class NetworkConfiguration {
     public auxAddress: HexString,
     public animeAddress: HexString,
     public cetusAddress: HexString,
+    public fireAddress: HexString,
     public isMainNet = false
   ) {}
 }
@@ -47,7 +48,9 @@ export const LOCAL_CONFIG = new NetworkConfiguration(
   // anime
   new HexString('0x796900ebe1a1a54ff9e932f19c548f5c1af5c6e7d34965857ac2f7b1d1ab2cbf'),
   // cetus
-  cetus_amm.Amm_swap.Pool.moduleAddress
+  cetus_amm.Amm_swap.Pool.moduleAddress,
+  // fire
+  new HexString('0x21a19ab56c7521fcc4af7eef657d1c2b61a96b0e23c0f94426626ed3d830fe5c'),
 );
 
 export const TESTNET_CONFIG = new NetworkConfiguration(
@@ -75,7 +78,9 @@ export const TESTNET_CONFIG = new NetworkConfiguration(
   // anime
   new HexString('0x796900ebe1a1a54ff9e932f19c548f5c1af5c6e7d34965857ac2f7b1d1ab2cbf'),
   // cetus
-  cetus_amm.Amm_swap.Pool.moduleAddress
+  cetus_amm.Amm_swap.Pool.moduleAddress,
+  // fire
+  new HexString('0x21a19ab56c7521fcc4af7eef657d1c2b61a96b0e23c0f94426626ed3d830fe5c'),
 );
 
 export const MAINNET_CONFIG = new NetworkConfiguration(
@@ -103,7 +108,9 @@ export const MAINNET_CONFIG = new NetworkConfiguration(
   // anime
   new HexString('0x796900ebe1a1a54ff9e932f19c548f5c1af5c6e7d34965857ac2f7b1d1ab2cbf'),
   // cetus
-  cetus_amm.Amm_swap.Pool.moduleAddress
+  cetus_amm.Amm_swap.Pool.moduleAddress,
+  // fire
+  new HexString('0x21a19ab56c7521fcc4af7eef657d1c2b61a96b0e23c0f94426626ed3d830fe5c'),
 );
 
 export const CONFIGS = {
